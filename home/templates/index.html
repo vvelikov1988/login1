@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+ <html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Login 1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Create User:</h1>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action="/create" method = "POST">
+            {% csrf_token %}
+            <div class ="form group">
+                <label for="title">First name:</label>
+                <input type="fname" name="fname" id="fname">
+            </div>
+            <div class ="form group">
+                <label for="title">Last name:</label>
+                <input type="lname" name="lname" id="lname">
+            </div>
+            <div class ="form group">
+                <label for="title">Email:</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class ="form group">
+                <label for="title">Password:</label>
+                <input type="pwrd" name="pwrd" id="pwrd">
+            </div>
+            <div class ="form group">
+                <label for="title"> Confirm Password:</label>
+                <input type="conpwrd" name="conpwrd" id="conpwrd">
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+
+        
+        <script src="" async defer></script>
+    </body>
+</html>
